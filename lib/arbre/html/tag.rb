@@ -151,6 +151,7 @@ module Arbre
         # set_attribute :id, ActionController::RecordIdentifier.dom_id(record, default_id_for_prefix)
         # add_class ActionController::RecordIdentifier.dom_class(record)
         set_attribute :id, dom_id_for(record)
+        set_attribute :for, 'batch_action_item_'+record.id.to_s unless record.id.nil?
         add_class dom_class_name_for(record)
       end
 
